@@ -71,7 +71,7 @@ def eval(ast, env):
         body = args[1]  
         return lambda *params_vals: eval(body, {**env, **dict(zip(params, params_vals))})
     elif op == 'import':
-        path = args[0] + '.l'  # Формируем путь
+        path = args[0] + '.lisp'  # Формируем путь
         with open(path, 'r') as f:
             for line in f:
                 code = line.strip()
